@@ -23,7 +23,7 @@ def cv(T,N):
  rho = 6.022e28 #number density of atoms
  kb = 1.38e-23 #Boltzmann's constant
  a = 0 #int limit lower
- b = V/T  #int limit upper
+ b = theta_d/T  #int limit upper
  
  #calculate sample points and weights, map to integration domain
  x,w = gaussxw(N)
