@@ -39,11 +39,11 @@ fluxnormint = np.empty(len(flux), dtype=object)
 norm= np.empty(len(flux), dtype=object)
 print('lennorm')
 print(len(norm))
-#fluxnormal= np.empty(len(flux), dtype=np.float64)
+
 for n in range(len(flux)):
  fluxnormint[n]=flux[n]/scipy.integrate.simpson(flux[n], x=logwave)
  norm[n]=scipy.integrate.simpson(flux[n], x=logwave)
-# fluxnormal[n]=flux[n]/sum(flux[n])
+
 
 
 #print('flux')
@@ -53,8 +53,7 @@ print(fluxnormint)
 
 
 
-#print('fluxnormal')
-#print(fluxnormal)
+
 
 #print(scipy.integrate.simpson(fluxnormint[1], x=logwave))
 #print(scipy.integrate.simpson(fluxnormint[2], x=logwave))
@@ -74,10 +73,7 @@ print('meanflux')
 print(meanflux)
 print(len(meanflux))
 
-#print(np.mean(fluxnormint[0]))
-#print(np.mean(fluxnormint[1]))
-#print(np.mean(fluxnormint[2]))
-#print(np.mean(fluxnormint[4000]))
+
 residual=fluxnormint-meanflux
 print(residual)
 
@@ -113,8 +109,6 @@ print('vec')
 print(eigvec)
 
 
-
-
 plt.xlabel('component number')
 plt.ylabel('component value')
 plt.legend()
@@ -126,6 +120,7 @@ plt.savefig('part_d.png')
 UT=np.matrix.transpose(U)
 V=np.transpose(VT)
 #V.sort(axis=-1, kind=None, order=None)
+
 print('w')
 print(w)
 
@@ -154,7 +149,8 @@ mflux_fcde=meanflux[0:500]+five_coeff_dot_eigvec
 norm_mf_fcde=np.empty([500,len(logwave)], dtype=np.float64)
 for s in range(500):
  norm_mf_fcde[s,:]=norm[s]*mflux_fcde[s]
-print('flix again')
+ 
+print('flux again')
 print(norm_mf_fcde)
 #Part H
 
