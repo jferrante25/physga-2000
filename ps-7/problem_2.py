@@ -54,7 +54,7 @@ def brent(func=None, astart=None, bstart=None, cstart=None, tol=1.e-9, maxiter=4
  bold = b+2.* tol
  niter = 0
  n=-1
- #keep track of successive period steps
+ #keep track of successive parabolic steps
  blist=[]
  # try parabolic
  while((np.abs(bold-b)>tol) & (niter < maxiter)):
