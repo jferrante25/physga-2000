@@ -68,7 +68,7 @@ def cranknicholstep(psi):
  psinew = np.linalg.solve(A,v)
  return psinew
 
-nstep = 2000
+nstep = 3000
 q = np.zeros((nstep, 1001),complex)
 qreal = np.zeros((nstep, 1001),float)
 q[0, :] = psi0

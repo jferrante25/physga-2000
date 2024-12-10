@@ -64,13 +64,13 @@ def spect(t):
  psi=dcst.idst(invcoeff)
  return psi
 
-nstep = 2000
+nstep = 3000
 q = np.zeros((nstep, 1000),complex)
 qreal = np.zeros((nstep, 1000),float)
 q[0, :] = psi0
 qreal[0,:]=np.real(psi0)
 
-plt.plot(xvals,spect(100))
+plt.plot(xvals,spect(1e-16))
 plt.show()
 for i in np.arange(nstep - 1):
  q[i, :] = spect(h*i)
